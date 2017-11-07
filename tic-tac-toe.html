@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>javascript</title>
+
+
+<style type="text/css">
+ .div1
+  {
+    border: 1px solid white; 
+    background-color: #4f7d3c; 
+    width: 150px;
+    height: 150px;
+    float:left;
+    border-radius: 7px;
+    font-size: 60pt;
+    text-align: center;
+    line-height: 1.7em;
+    -webkit-user-select: none;
+  }
+
+.div2
+  {
+    display: block;
+    background-color: #5e9a49 ;
+    width: 500px;
+    height: 500px; 
+    margin: 0 auto; 
+    padding-left: 40px;  
+    padding-top: 40px;
+    border-radius: 7px;
+  }
+
+.div1:hover 
+  {
+      background: #ab824e; 
+  } 
+
+</style>
+</head>
+
+<body style="background-color: #5e9a49" >
+
+  <h1 style="text-align: center;  font-size: 35pt;">Крестики-нолики</h1>
+
+  <div id="parentElem"  class="div2">
+
+        <div id="b1" class="div1" onclick="test(event)"> </div>
+        <div id="b2" class="div1" onclick="test(event)"> </div>
+        <div id="b3" class="div1" onclick="test(event)"> </div>
+
+        <div id="b4" class="div1" onclick="test(event)"> </div>
+        <div id="b5" class="div1" onclick="test(event)"> </div>
+        <div id="b6" class="div1" onclick="test(event)"> </div>
+
+        <div id="b7"  class="div1" onclick="test(event)"> </div>
+        <div id="b8" class="div1" onclick="test(event)"> </div>
+        <div id="b9" class="div1" onclick="test(event)"> </div>
+        
+ </div>
+
+<script type="text/javascript">
+
+var mass  = document.getElementById('parentElem').getElementsByClassName('div1');
+
+function test(evt)
+{
+    evt = (evt)?evt:((window.event)?event:null);
+    if(evt==null) return;
+
+     var id =(evt.srcElement)?evt.srcElement.id:evt.target.id;
+      var elem = document.getElementById(id);
+
+if(elem.innerText !="")
+{
+  return;
+}
+
+if(elem.innerText =="")
+{
+  elem.innerText ="X";
+}
+
+
+  for (var i = 0; i < mass.length; i++)
+  {
+      console.log(mass[i].innerText);
+      var a1 = Math.floor(Math.random()*8 );
+
+      if(mass[1].innerText=="0" && mass[4].innerText=="0" && mass[7].innerText !="0" && mass[7].innerText =="")
+            {
+                mass[7].innerText ="0";
+                  break;
+            }
+
+            if(mass[4].innerText=="0" && mass[5].innerText=="0" && mass[3].innerText !="0" && mass[3].innerText =="")
+            {
+                mass[3].innerText ="0";
+                  break;
+            }
+
+            if(mass[1].innerText=="0" && mass[0].innerText=="0" && mass[2].innerText !="0" && mass[2].innerText =="")
+            {
+                mass[2].innerText ="0";
+                  break;
+            }
+
+            if(mass[6].innerText=="0" && mass[4].innerText=="0" && mass[2].innerText !="0" && mass[2].innerText =="")
+            {
+                mass[2].innerText ="0";
+                  break;
+            }
+
+            if(mass[3].innerText=="0" && mass[4].innerText=="0" && mass[5].innerText !="0" && mass[5].innerText =="")
+            {
+                mass[5].innerText ="0";
+                  break;
+            }
+
+            if(mass[4].innerText=="0" && mass[7].innerText=="0" && mass[1].innerText !="0" && mass[1].innerText =="")
+            {
+                mass[1].innerText ="0";
+                  break;
+            }
+
+            if(mass[2].innerText=="0" && mass[4].innerText=="0" && mass[6].innerText !="0" && mass[6].innerText =="")
+            {
+                mass[6].innerText ="0";
+                  break;
+            }
+
+            if(mass[0].innerText=="0" && mass[4].innerText=="0" && mass[8].innerText !="0" && mass[8].innerText =="")
+            {
+                mass[8].innerText ="0";
+                  break;
+            }
+
+            if(mass[0].innerText=="X" && mass[1].innerText=="X" && mass[2].innerText !="0" && mass[2].innerText =="")
+            {
+                mass[2].innerText ="0";
+                  break;
+            }
+
+            if(mass[0].innerText=="X" && mass[2].innerText=="X" && mass[1].innerText !="0" && mass[1].innerText =="")
+            {
+                mass[1].innerText ="0";
+                  break;
+            }
+
+             if((mass[0].innerText=="X" || mass[2].innerText=="X" || mass[6].innerText =="X" || mass[8].innerText =="X") && mass[4].innerText == "" && mass[4].innerText !="0")
+             {
+                 mass[4].innerText ="0";
+                   break;
+            }
+
+            if(mass[0].innerText=="X" && mass[3].innerText=="X" && mass[6].innerText !="0" && mass[6].innerText =="")
+            {
+                mass[6].innerText ="0";
+                  break;
+            }
+
+             if(mass[0].innerText=="X" && mass[4].innerText=="X" && mass[8].innerText !="0" && mass[8].innerText =="")
+            {
+                mass[8].innerText ="0";
+                  break;
+            }
+
+
+            if(mass[4].innerText=="X" && mass[6].innerText=="X" && mass[2].innerText !="0" && mass[2].innerText =="")
+            {
+                mass[2].innerText ="0";
+                  break;
+            }
+
+            if(mass[4].innerText=="X" && mass[7].innerText=="X" && mass[1].innerText !="0" && mass[1].innerText =="")
+            {
+                mass[1].innerText ="0";
+                  break;
+            }
+
+            if(mass[4].innerText=="X" && mass[5].innerText=="X" && mass[3].innerText !="0" && mass[3].innerText =="")
+            {
+                mass[3].innerText ="0";
+                  break;
+            }
+
+            if(mass[4].innerText=="X" && mass[8].innerText=="X" && mass[0].innerText !="0" && mass[0].innerText =="")
+            {
+                mass[0].innerText ="0";
+                  break;
+            }
+
+            if(mass[7].innerText=="X" && mass[8].innerText=="X" && mass[6].innerText !="0" && mass[6].innerText =="")
+            {
+                mass[6].innerText ="0";
+                  break;
+            }
+
+            if(mass[7].innerText=="X" && mass[6].innerText=="X" && mass[8].innerText !="0" && mass[8].innerText =="")
+            {
+                mass[8].innerText ="0";
+                  break;
+            }
+
+            if(mass[2].innerText=="X" && mass[8].innerText=="X" && mass[5].innerText !="0" && mass[5].innerText =="")
+            {
+                mass[5].innerText ="0";
+                  break;
+            }
+
+            if(mass[3].innerText=="X" && mass[4].innerText=="X" && mass[5].innerText !="0" && mass[5].innerText =="")
+            {
+                mass[5].innerText ="0";
+                  break;
+            }
+
+            if(mass[2].innerText=="X" && mass[5].innerText=="X" && mass[8].innerText !="0" && mass[8].innerText =="")
+            {
+                mass[8].innerText ="0";
+                  break;
+            }
+
+            if(mass[8].innerText=="X" && mass[6].innerText=="X" && mass[7].innerText !="0" && mass[7].innerText =="")
+            {
+                mass[7].innerText ="0";
+                  break;
+            }
+
+            if(mass[0].innerText=="X" && mass[6].innerText=="X" && mass[3].innerText !="0" && mass[3].innerText =="")
+            {
+                mass[3].innerText ="0";
+                  break;
+            }
+
+             if(mass[0].innerText=="X" && mass[8].innerText=="X" && mass[4].innerText !="0" && mass[4].innerText =="")
+            {
+                mass[4].innerText ="0";
+                  break;
+            }
+
+            if(mass[3].innerText=="X" && mass[5].innerText=="X" && mass[4].innerText !="0" && mass[4].innerText =="")
+            {
+                mass[4].innerText ="0";
+                  break;
+            }
+
+            if(mass[2].innerText=="X" && mass[6].innerText=="X" && mass[4].innerText !="0" && mass[4].innerText =="")
+            {
+                mass[4].innerText ="0";
+                  break;
+            }
+
+            if(mass[3].innerText=="X" && mass[6].innerText=="X" && mass[0].innerText !="0" && mass[0].innerText =="")
+            {
+                mass[0].innerText ="0";
+                  break;
+            }
+
+             if(mass[2].innerText=="X" && mass[4].innerText=="X" && mass[6].innerText !="0" && mass[6].innerText =="")
+            {
+                mass[6].innerText ="0";
+                  break;
+            }
+
+
+             if(mass[1].innerText=="X" && mass[2].innerText=="X" && mass[0].innerText !="0" && mass[0].innerText =="")
+            {
+                mass[0].innerText ="0";
+                  break;
+            }
+
+            if(mass[1].innerText=="X" && mass[4].innerText=="X" && mass[7].innerText !="0" && mass[7].innerText =="")
+            {
+                mass[7].innerText ="0";
+                  break;
+            }
+
+             if(mass[1].innerText=="X" && mass[7].innerText=="X" && mass[4].innerText !="0" && mass[4].innerText =="")
+            {
+                mass[4].innerText ="0";
+                  break;
+            }
+
+            
+          
+            if(mass[a1].innerText ==""  )
+            {
+                mass[a1].innerText ="0";
+                  break;
+            }
+
+  }
+
+
+  if(mass[0].innerText=="X" && mass[1].innerText=="X" && mass[2].innerText=="X"|| mass[3].innerText=="X" && mass[4].innerText=="X" && mass[5].innerText=="X"||mass[6].innerText=="X" && mass[7].innerText=="X" && mass[8].innerText=="X"||mass[0].innerText=="X" && mass[4].innerText=="X" && mass[8].innerText=="X"||mass[2].innerText=="X" && mass[4].innerText=="X" && mass[6].innerText=="X" ||mass[0].innerText=="X" && mass[3].innerText=="X" && mass[6].innerText=="X" ||mass[1].innerText=="X" && mass[4].innerText=="X" && mass[7].innerText=="X"||mass[2].innerText=="X" && mass[5].innerText=="X" && mass[8].innerText=="X")
+  {
+      alert("Вы победили!!!")
+      location.reload();
+      return;
+  }
+
+  if(mass[0].innerText=="0" && mass[1].innerText=="0" && mass[2].innerText=="0"|| mass[3].innerText=="0" && mass[4].innerText=="0" && mass[5].innerText=="0"||mass[6].innerText=="0" && mass[7].innerText=="0" && mass[8].innerText=="0"||mass[0].innerText=="0" && mass[4].innerText=="0" && mass[8].innerText=="0"||mass[2].innerText=="0" && mass[4].innerText=="0" && mass[6].innerText=="0" ||mass[0].innerText=="0" && mass[3].innerText=="0" && mass[6].innerText=="0" ||mass[1].innerText=="0" && mass[4].innerText=="0" && mass[7].innerText=="0"||mass[2].innerText=="0" && mass[5].innerText=="0" && mass[8].innerText=="0")
+  {
+      alert("Победил компьютер!!!")
+      location.reload();
+      return;
+  }
+
+  if((mass[0].innerText=="0" || mass[0].innerText=="X") && (mass[1].innerText=="0" || mass[1].innerText=="X") && (mass[2].innerText=="0" || mass[2].innerText=="X") && (mass[3].innerText=="0" || mass[3].innerText=="X") && (mass[4].innerText=="0" || mass[4].innerText=="X") && (mass[5].innerText=="0" || mass[5].innerText=="X") && (mass[6].innerText=="0" || mass[6].innerText=="X") && (mass[7].innerText=="0" || mass[7].innerText=="X") && (mass[8].innerText=="0" || mass[8].innerText=="X") )
+  {
+    alert("Ничья!!!")
+    location.reload();
+    return;
+  }
+
+}
+
+</script>
+
+  </body>
+  </html>
